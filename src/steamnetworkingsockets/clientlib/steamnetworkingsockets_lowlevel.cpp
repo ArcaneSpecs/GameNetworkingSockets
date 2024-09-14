@@ -1966,6 +1966,12 @@ static SOCKET OpenUDPSocketBoundToSockAddr( const void *pSockaddr, size_t len, S
 	#if IsLinux()
 		sockType |= SOCK_CLOEXEC;
 	#endif
+
+    // Maybe needed?
+    // #if IsAndroid()
+    //     sockType |= SOCK_CLOEXEC;
+    // #endif
+
 	#if IsNintendoSwitch() && !defined( _WIN32 )
 		sockType |= SOCK_NONBLOCK;
 	#endif
